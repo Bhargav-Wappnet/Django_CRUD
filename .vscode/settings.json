@@ -1,0 +1,5 @@
+{
+    "workbench.settings.useSplitJSON": true,
+    "workbench.settings.editor": "json",
+    "emmet.includeLanguages": {"django-html": "html",}
+}
