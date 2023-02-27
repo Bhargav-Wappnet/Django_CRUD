@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    {% block employe %}
+    <link rel="stylesheet" href="{% static 'css/Jadu.css' %}">
+    <div>
+    <h1>Hey In the employe block.</h1>
+    <p>- - > Gave the designation of the employe.</p>
+    <h6>Employes List: {{emp}}</h6>
+    <ul>
+        {% for employe in emp  %}
+             <li>
+            {% if employe == "Aniket" %}
+                <h6>{{employe}} is a Designer</h6>
+            {% elif employe == "Bhargav"%}
+                <h6>{{employe}} is a Developer</h6>
+            {% elif employe == "Bhautik"%}
+                <h6>{{employe}} is a Manager</h6>
+            {% elif employe == "Harsh"%}
+                <h6>{{employe}} is a Designer</h6>
+            {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endblock employe %}
+
+    {% block Changing %}
+    <div>
+    <link rel="stylesheet" href="{% static 'css/Jadu.css' %}">
+    <h1>Hey In the Changing block.</h1>
+    <p>- - > This is for removing the repeatative values from list.</p>
+        <h6>Given List: {{Values}}</h6>
+        <h6>Result: </h6>
+            {% for value in Values %}
+                    {% ifchanged  %}
+                        {{value}}
+                    {% endifchanged %}
+            {% endfor %}
+    </div>
+    <img id="imp" src="{% static 'img/cool.jpg' %}" alt="beautiful"><br>
+    <button id="click" onclick="changeimg()">ClickMe</button>
+    {% endblock Changing %}
+</body>
+</html>

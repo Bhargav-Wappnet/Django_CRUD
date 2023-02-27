@@ -7,7 +7,8 @@ from first_app.models import Employe, Developer, Designer, BussinesAnalyst
 class EmployeAdmin(admin.ModelAdmin):
     list_display = ('EmployeID', 'Name', 'Designation',
                     'Email', 'JoiningDate', 'created_at', 'updated_at')
-
+    fields = ['Name', ('Email', 'Designation')]
+  
 
 @admin.register(Developer)
 class DeveloperAdmin(admin.ModelAdmin):
@@ -22,3 +23,4 @@ class DesignerAdmin(admin.ModelAdmin):
 @admin.register(BussinesAnalyst)
 class BaAdmin(admin.ModelAdmin):
     list_display = ('employe', 'Tool', 'DefaultSalary')
+    list_filter = ('DefaultSalary', 'Tool')
