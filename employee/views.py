@@ -4,7 +4,7 @@ from employee.models import employee
 
 
 # Create your views here.
-def emp(request):
+def emply(request):
     if request.method == "POST":
         form = EmployeeForm(request.POST)
         if form.is_valid():

@@ -3,9 +3,9 @@ from django.db import models
 
 # Create your models here.
 class employee(models.Model):
+    id = models.CharField(max_length=50, primary_key=True)
     name = models.CharField(max_length=50)
-    salary = models.IntegerField()
-    join_date = models.models.DateField(auto_now_add=True)
+    salary = models.CharField(max_length=50)
 
     class Meta:
         db_table = "employee"

@@ -1,4 +1,40 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>CRUD In Employee</title>
+</head>
+<body>
 {% block edit %}
+    <form method="POST" class="post-form" action="/update/{{employee.id}}">  
+            {% csrf_token %}  
+            <br>  
+            <div>  
+                <h1>Update Details :</h1>  
+            </div>  
+            <br> 
+            <div>  
+                <label>Employee Id:</label>  
+                    <input type="text" name="id" id="id_id" required maxlength="20" value="{{ employee.id }}"/>  
+            </div>  
+
+            <div>  
+                <label>Employee Name:</label>  
+                    <input type="text" name="name" id="id_name" required maxlength="100" value="{{ employee.name }}" />  
+            </div>  
+
+            <div>  
+                <label>Employee Salary:</label>  
+                    <input type="text" name="salary" id="id_salary" required maxlength="254" value="{{ employee.salary }}" />   
+            </div>  
+            <br/>    
+            <button type="submit">Update</button>  
+    </form>  
 
 {% endblock edit %}
+</body>
+</html>
